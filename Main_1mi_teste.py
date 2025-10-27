@@ -1,4 +1,4 @@
-# ===== Limite de threads BLAS/NumPy (defina antes de importar pandas/numpy) =====
+# ===== Limite de threads BLAS/NumPy =====
 import os
 os.environ.setdefault("OMP_NUM_THREADS", "1")
 os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
@@ -236,10 +236,10 @@ def main(n_procs: int | None = None):
             if result["ok"]:
                 done.add(pixel)
                 save_progress(done)
-                print(f"✅ Concluído: {nome} (pixel {pixel}). Progresso total: {len(done)}")
+                print(f"Concluído: {nome} (pixel {pixel}). Progresso total: {len(done)}")
             else:
                 print(
-                    f"❌ Erro em {nome} (pixel {pixel}): {result['error']}. "
+                    f"Erro em {nome} (pixel {pixel}): {result['error']}. "
                     f"Consulte o log em {LOG_DIR}/pipeline_{nome}.log. Continuação com outros pixels..."
                 )
 
@@ -253,3 +253,4 @@ if __name__ == "__main__":
     p.add_argument("--procs", type=int, default=None, help="CPUs lógicas a usar (processos)")
     args = p.parse_args()
     main(n_procs=args.procs)
+
