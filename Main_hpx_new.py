@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 from tqdm import tqdm
 
-# ===== Imports do pipeline (seus) =====
+# ===== Imports do pipeline =====
 from config import INPUT_DIR, OUTPUT_DIR
 from compare_loop_healpix_altair_new import compare_loop_healpix
 from robust_propagation_altair_new import propagate_robust
@@ -194,3 +194,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
